@@ -200,12 +200,12 @@ function LearningFundDetail({ campaign }: { campaign: Campaign }) {
         </section>
 
         <section className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
-          <div className="grid gap-6 lg:grid-cols-[0.66fr_0.34fr]">
+          <div className="grid gap-6 lg:grid-cols-[1fr_0.55fr]">
             <div className="space-y-6">
               <section className="rounded-lg border border-ink/10 bg-white p-6 shadow-soft">
                 <p className="text-sm font-bold uppercase tracking-[0.16em] text-meadow">What your gift supports</p>
                 <h2 className="mt-2 text-3xl font-black">A full-school support system</h2>
-                <div className="mt-6 grid gap-4 md:grid-cols-2">
+                <div className="mt-6 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
                   {learningFundHighlights.map((item) => (
                     <SupportCard key={item.title} {...item} />
                   ))}
@@ -229,8 +229,6 @@ function LearningFundDetail({ campaign }: { campaign: Campaign }) {
                   <DonationButton url={campaign.externalDonationUrl} label={campaign.externalActionLabel} />
                 </div>
               </section>
-
-              <ReminderSignup campaignId={campaign.id} campaignTitle={campaign.title} />
 
               <section className="rounded-lg border border-ink/10 bg-white p-6 shadow-soft">
                 <p className="text-sm font-bold uppercase tracking-[0.16em] text-meadow">Why it matters</p>
