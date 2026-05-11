@@ -25,33 +25,35 @@ export function PublicHeader() {
             <span className="block truncate text-lg font-bold leading-tight">{schoolProfile.schoolName}</span>
           </span>
         </Link>
-        <nav className="flex items-center gap-7 md:justify-self-center" aria-label="Public sections">
-          {publicNavItems.map((item) => {
-            const isActive =
-              item.href === "/" ? pathname === "/" : item.href.startsWith("/about") ? pathname === "/about" : false;
+        <div className="flex items-center justify-between gap-3 md:contents">
+          <nav className="flex min-w-0 items-center gap-5 sm:gap-7 md:justify-self-center" aria-label="Public sections">
+            {publicNavItems.map((item) => {
+              const isActive =
+                item.href === "/" ? pathname === "/" : item.href.startsWith("/about") ? pathname === "/about" : false;
 
-            return (
-              <Link
-                className={`focus-ring border-b-2 px-1 py-2 text-sm font-black transition ${
-                  isActive
-                    ? "border-coral text-ink"
-                    : "border-transparent text-ink/58 hover:border-coral/35 hover:text-ink"
-                }`}
-                href={item.href}
-                key={item.href}
-              >
-                {item.label}
-              </Link>
-            );
-          })}
-        </nav>
-        <Link
-          className="focus-ring inline-flex w-fit items-center gap-2 rounded-full border border-honey/45 bg-sunshine/55 px-4 py-2 text-sm font-bold shadow-sm transition hover:-translate-y-0.5 hover:bg-sunshine hover:shadow-soft md:justify-self-end"
-          href="/admin"
-        >
-          <LayoutDashboard aria-hidden className="h-4 w-4" />
-          PTA Admin
-        </Link>
+              return (
+                <Link
+                  className={`focus-ring whitespace-nowrap border-b-2 px-1 py-2 text-sm font-black transition ${
+                    isActive
+                      ? "border-coral text-ink"
+                      : "border-transparent text-ink/58 hover:border-coral/35 hover:text-ink"
+                  }`}
+                  href={item.href}
+                  key={item.href}
+                >
+                  {item.label}
+                </Link>
+              );
+            })}
+          </nav>
+          <Link
+            className="focus-ring inline-flex shrink-0 items-center gap-2 whitespace-nowrap rounded-full border border-honey/45 bg-sunshine/55 px-4 py-2 text-sm font-bold shadow-sm transition hover:-translate-y-0.5 hover:bg-sunshine hover:shadow-soft md:justify-self-end"
+            href="/admin"
+          >
+            <LayoutDashboard aria-hidden className="h-4 w-4" />
+            PTA Admin
+          </Link>
+        </div>
       </div>
     </header>
   );
