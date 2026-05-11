@@ -79,7 +79,7 @@ export default function PublicPortalPage() {
                   label={featuredCampaign.externalActionLabel}
                 />
                 <Link
-                  className="focus-ring inline-flex items-center justify-center gap-2 rounded-md border border-sky/40 bg-sky/15 px-5 py-3 text-sm font-bold transition hover:-translate-y-0.5 hover:bg-sky hover:text-white"
+                  className="focus-ring inline-flex items-center justify-center gap-2 rounded-md border border-sky/40 bg-transparent px-5 py-3 text-sm font-bold transition hover:-translate-y-0.5 hover:bg-sky hover:text-white"
                   href={`/campaigns/${featuredCampaign.slug}`}
                 >
                   View details
