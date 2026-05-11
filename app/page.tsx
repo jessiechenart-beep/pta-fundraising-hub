@@ -27,6 +27,7 @@ export default function PublicPortalPage() {
     [activeCampaigns, activeEvents]
   );
   const featuredCampaign = useMemo(() => getFeaturedCampaign(campaigns), [campaigns]);
+  const featuredCampaignIsEvent = isParticipationEvent(featuredCampaign);
   const visibleItems = useMemo(
     () =>
       searchCampaigns(
@@ -66,13 +67,15 @@ export default function PublicPortalPage() {
             <CampaignImage campaign={featuredCampaign} className="aspect-[16/10] w-full bg-white" />
             <div className="space-y-4 p-6">
               <h2 className="text-2xl font-black">{featuredCampaign.title}</h2>
-              <div className="space-y-2">
-                <ProgressBar campaign={featuredCampaign} />
-                <p className="text-sm font-semibold text-ink/68">
-                  {formatCurrency(featuredCampaign.amountRaised)} collected of{" "}
-                  {formatCurrency(featuredCampaign.goalAmount)} goal
-                </p>
-              </div>
+              {!featuredCampaignIsEvent ? (
+                <div className="space-y-2">
+                  <ProgressBar campaign={featuredCampaign} />
+                  <p className="text-sm font-semibold text-ink/68">
+                    {formatCurrency(featuredCampaign.amountRaised)} collected of{" "}
+                    {formatCurrency(featuredCampaign.goalAmount)} goal
+                  </p>
+                </div>
+              ) : null}
               <div className="flex flex-col gap-3 sm:flex-row">
                 <DonationButton
                   url={featuredCampaign.externalDonationUrl}

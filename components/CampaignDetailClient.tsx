@@ -153,13 +153,15 @@ const learningFundHighlights = [
 ];
 
 function HeroActionPanel({ campaign }: { campaign: Campaign }) {
+  const showProgress = !isParticipationEvent(campaign);
+
   return (
     <section className="mt-6">
       <div className="grid max-w-2xl gap-3 sm:grid-cols-2">
         <InfoRow icon={<CalendarDays aria-hidden className="h-4 w-4" />} label="Starts" value={formatDate(campaign.startDate)} />
         <InfoRow icon={<Target aria-hidden className="h-4 w-4" />} label="Deadline" value={formatDate(campaign.deadline)} />
       </div>
-      {campaign.category !== "event" ? (
+      {showProgress ? (
         <div className="mt-5 max-w-2xl">
           <div className="mb-3 flex items-end justify-between gap-3">
             <p className="text-3xl font-black">{formatCurrency(campaign.amountRaised)}</p>
@@ -169,6 +171,19 @@ function HeroActionPanel({ campaign }: { campaign: Campaign }) {
         </div>
       ) : null}
     </section>
+  );
+}
+
+function isParticipationEvent(campaign: Campaign): boolean {
+  if (campaign.category) {
+    return campaign.category === "event";
+  }
+
+  return (
+    campaign.id === "teacher-staff-appreciation-week" ||
+    campaign.id.startsWith("event-") ||
+    (campaign.id !== "fifth-grade-gift" &&
+      campaign.externalActionLabel?.toLowerCase().includes("sign up") === true)
   );
 }
 
