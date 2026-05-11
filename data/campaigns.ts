@@ -61,12 +61,9 @@ export const campaigns: Campaign[] = [
     slug: "learning-fund-donation",
     title: "Learning Fund Donation",
     type: "Direct Donation",
-    shortDescription:
-      "**For $3.75 per school day your child receives:** Full Time Librarian, Small Group Reading and Math Specialists, Social Emotional Counselor, and a Certificated Art Teacher.\n\nThis year funds will also be used to support digital subscriptions used in the classroom, on and off-site field trips, and professional development for teachers.\n\n**Donate what you can and support our students.**",
-    fullDescription:
-      "**For $3.75 per school day your child receives:** Full Time Librarian, Small Group Reading and Math Specialists, Social Emotional Counselor, and a Certificated Art Teacher.\n\nThis year funds will also be used to support digital subscriptions used in the classroom, on and off-site field trips, and professional development for teachers.\n\n**Donate what you can and support our students.**",
-    supports:
-      "Full Time Librarian, reading and math specialists, social emotional counseling, certificated art instruction, classroom digital subscriptions, field trips, and teacher professional development.",
+    shortDescription: "**For $3.75 per school day your child receives:** Full Time Librarian, Small Group Reading and Math Specialists, Social Emotional Counselor, and a Certificated Art Teacher.\n\nThis year funds will also be used to support digital subscriptions used in the classroom, on and off-site field trips, and professional development for teachers.\n\n**Donate what you can and support our students.**",
+    fullDescription: "**For $3.75 per school day your child receives:** Full Time Librarian, Small Group Reading and Math Specialists, Social Emotional Counselor, and a Certificated Art Teacher.\n\nThis year funds will also be used to support digital subscriptions used in the classroom, on and off-site field trips, and professional development for teachers.\n\n**Donate what you can and support our students.**",
+    supports: "Full Time Librarian, reading and math specialists, social emotional counseling, certificated art instruction, classroom digital subscriptions, field trips, and teacher professional development.",
     goalAmount: 208000,
     amountRaised: 28750,
     startDate: "2026-04-01",
@@ -74,8 +71,7 @@ export const campaigns: Campaign[] = [
     heroImage: "/qrlf-learning-fund-centered.png",
     heroImageFit: "contain",
     heroImagePosition: "50% 50%",
-    externalDonationUrl:
-      "https://quail.futurefund.com/store/campaigns/54837-learning-fund-donation?c=1",
+    externalDonationUrl: "https://quail.futurefund.com/store/campaigns/54837-learning-fund-donation?c=1",
     externalActionLabel: "Donate now",
     status: "active",
     featured: true,
@@ -83,25 +79,23 @@ export const campaigns: Campaign[] = [
       "Funded 26 classroom library refreshes last year.",
       "Covered field trip assistance for 84 students.",
       "Purchased shared science and art supplies for every grade."
-    ]
+    ],
+    displayOrder: 6
   },
   {
     id: "quail-run-auction",
     slug: "quail-run-auction",
     title: "Quail Run Elementary Auction",
     type: "Gala / Event",
-    shortDescription:
-      "New items have been added to the auction. Join the bidding fun and support Quail Run students.",
-    fullDescription:
-      "Browse the latest auction additions and place bids through the official Quail Run Auctria auction page. The PTA Fundraising Hub shares campaign visibility only; all bidding and checkout happen through Auctria.",
-    supports:
-      "Arts and crafts kits, classroom enrichment, family outing experiences, student supplies, and school community programs.",
+    shortDescription: "New items have been added to the auction. Join the bidding fun and support Quail Run students.",
+    fullDescription: "Browse the latest auction additions and place bids through the official Quail Run Auctria auction page. The PTA Fundraising Hub shares campaign visibility only; all bidding and checkout happen through Auctria.",
+    supports: "Arts and crafts kits, classroom enrichment, family outing experiences, student supplies, and school community programs.",
     goalAmount: 45000,
     amountRaised: 28750,
     startDate: "2026-04-01",
     deadline: "2026-06-07",
     heroImage: "/quail-run-auction-flyer.png",
-    heroImageFit: "contain",
+    heroImageFit: "cover",
     heroImagePosition: "50% 50%",
     externalDonationUrl: "https://event.auctria.com/e7ea1fa8-7496-4c22-a89f-8d56859d5fe1/",
     externalActionLabel: "Bid now",
@@ -110,25 +104,24 @@ export const campaigns: Campaign[] = [
       "Funded 26 classroom library refreshes last year.",
       "Covered field trip assistance for 84 students.",
       "Purchased shared science and art supplies for every grade."
-    ]
+    ],
+    displayOrder: 2,
+    managerUserId: "pta-user-1778212336697"
   },
   {
     id: "hazy-barbecue-dine-donate",
     slug: "hazy-barbecue-dine-donate",
     title: "Hazy Barbecue Dine N' Donate",
     type: "Restaurant Fundraiser",
-    shortDescription:
-      "Dine in or order takeout from Hazy Barbecue and use code QR to support Quail Run Elementary.",
-    fullDescription:
-      "Join Quail Run families for an all-day Dine N' Donate fundraiser at Hazy Barbecue. Use code QR when ordering online, or mention Quail Run Elementary when dining in or ordering takeout. Hazy will donate 15% of eligible sales back, with a 20% giveback if the event reaches $2,500 in sales.",
-    supports:
-      "Restaurant giveback funds help support Quail Run Elementary PTA programs, classroom needs, and student enrichment.",
+    shortDescription: "Dine in or order takeout from Hazy Barbecue and use code QR to support Quail Run Elementary.",
+    fullDescription: "Join Quail Run families for an all-day Dine N' Donate fundraiser at Hazy Barbecue. Use code QR when ordering online, or mention Quail Run Elementary when dining in or ordering takeout. Hazy will donate 15% of eligible sales back, with a 20% giveback if the event reaches $2,500 in sales.",
+    supports: "Restaurant giveback funds help support Quail Run Elementary PTA programs, classroom needs, and student enrichment.",
     goalAmount: 500,
     amountRaised: 0,
     startDate: "2026-05-04",
     deadline: "2026-05-04",
     heroImage: "/hazy-barbecue-dine-donate.jpg",
-    heroImageFit: "contain",
+    heroImageFit: "cover",
     heroImagePosition: "50% 50%",
     externalDonationUrl: "https://www.hazybarbecue.com/",
     status: "active",
@@ -140,136 +133,243 @@ export const campaigns: Campaign[] = [
     restaurant: {
       restaurantName: "Hazy Barbecue",
       location: "200 Hartz Avenue, Danville, CA 94526",
-      instructions:
-        "Valid all day for takeout, dine-in, alcohol, and food purchases. Use code QR when ordering online.",
+      instructions: "Valid all day for takeout, dine-in, alcohol, and food purchases. Use code QR when ordering online.",
       donationPercentage: 15,
       promoCode: "QR",
       participationCount: 0,
       expectedDonation: 375,
       actualReceivedAmount: 0,
       payoutStatus: "pending",
-      parentSelfReportNote:
-        "Parent self-reports are unverified backup information until Hazy Barbecue confirms final eligible sales and payout."
-    }
-  },
-  {
-    id: "restaurant-fundraiser-placeholder",
-    slug: "restaurant-fundraiser-placeholder",
-    title: "Restaurant Fundraiser Placeholder",
-    type: "Restaurant Fundraiser",
-    shortDescription:
-      "Add the next restaurant partner, date, and giveback details for families.",
-    fullDescription:
-      "Use this placeholder campaign to draft a future restaurant fundraiser. Update the flyer, restaurant information, and external link in the admin dashboard.",
-    supports:
-      "Future restaurant giveback funds can support PTA programs, classroom needs, and student enrichment.",
-    goalAmount: 1000,
-    amountRaised: 0,
-    startDate: "2026-06-01",
-    deadline: "2026-06-01",
-    heroImage: "/hazy-barbecue-dine-donate.jpg",
-    heroImageFit: "contain",
-    heroImagePosition: "50% 50%",
-    externalDonationUrl: "https://example.com",
-    status: "draft",
-    pastImpact: [
-      "Restaurant nights make school support easy for busy families.",
-      "Local business partnerships strengthen the Quail Run community."
-    ],
-    restaurant: {
-      restaurantName: "Future Restaurant Partner",
-      location: "Add restaurant address",
-      instructions: "Add dine-in, takeout, promo code, and timing instructions.",
-      donationPercentage: 15,
-      promoCode: "QR",
-      participationCount: 0,
-      expectedDonation: 0,
-      actualReceivedAmount: 0,
-      payoutStatus: "pending",
-      parentSelfReportNote:
-        "Parent self-reports are unverified backup information until the restaurant confirms final eligible sales and payout."
-    }
-  },
-  {
-    id: "direct-donation-placeholder",
-    slug: "direct-donation-placeholder",
-    title: "Direct Donation Placeholder",
-    type: "Direct Donation",
-    shortDescription:
-      "Add a future direct donation campaign with a clear goal and school-approved giving link.",
-    fullDescription:
-      "Use this placeholder campaign to draft a future direct donation effort. Update the image, goal, description, and external payment link in the admin dashboard.",
-    supports:
-      "Future direct donations can support classroom supplies, enrichment programs, field trips, and student resources.",
-    goalAmount: 5000,
-    amountRaised: 0,
-    startDate: "2026-06-15",
-    deadline: "2026-07-15",
-    heroImage: "/qrlf-learning-fund-centered.png",
-    heroImageFit: "contain",
-    heroImagePosition: "50% 50%",
-    externalDonationUrl: "https://example.com",
-    externalActionLabel: "Donate now",
-    status: "draft",
-    pastImpact: [
-      "1 future giving campaign ready to customize.",
-      "Families can use one clear official giving link."
-    ]
+      parentSelfReportNote: "Parent self-reports are unverified backup information until Hazy Barbecue confirms final eligible sales and payout."
+    },
+    displayOrder: 3,
+    externalActionLabel: "Order online"
   },
   {
     id: "teacher-staff-appreciation-week",
     slug: "teacher-staff-appreciation-week",
     title: "Teacher & Staff Appreciation Week",
-    type: "Class Contribution",
-    shortDescription:
-      "Help make Teacher & Staff Appreciation Week special by signing up to contribute items.",
-    fullDescription:
-      "🍎 📚 Teacher & Staff Appreciation Week is coming up May 4–8, and we need your help to make it special!\n\nOur amazing teachers and staff do so much for our students every day, and this is a wonderful opportunity to show our gratitude.\n\nPlease sign up to contribute items to support the week’s activities. Thank you for helping us show our appreciation!",
-    supports:
-      "Daily appreciation activities for Quail Run teachers and staff, including the cafe bar, smoothie bar, taco bar, salad bar, and Friday spiritwear celebration.",
+    type: "School event",
+    shortDescription: "Help make Teacher & Staff Appreciation Week special by signing up to contribute items.",
+    fullDescription: "🍎 📚 Teacher & Staff Appreciation Week is coming up May 4–8, and we need your help to make it special!\n\nOur amazing teachers and staff do so much for our students every day, and this is a wonderful opportunity to show our gratitude.\n\nPlease sign up to contribute items to support the week’s activities. Thank you for helping us show our appreciation!",
+    supports: "Daily appreciation activities for Quail Run teachers and staff, including the cafe bar, smoothie bar, taco bar, salad bar, and Friday spiritwear celebration.",
     goalAmount: 120,
     amountRaised: 0,
     startDate: "2026-05-04",
     deadline: "2026-05-08",
     heroImage: "/teacher-staff-appreciation-week.jpg",
-    heroImageFit: "contain",
+    heroImageFit: "cover",
     heroImagePosition: "50% 50%",
-    externalDonationUrl:
-      "https://m.signupgenius.com/#!/showSignUp/60B0C4EAEA922A5F94-63567652-teacher?useFullSite=false",
-    externalActionLabel: "Sign up on SignUpGenius",
+    externalDonationUrl: "https://m.signupgenius.com/#!/showSignUp/60B0C4EAEA922A5F94-63567652-teacher?useFullSite=false",
+    externalActionLabel: "Sign up",
     status: "active",
     pastImpact: [
       "5 appreciation days planned for teachers and staff.",
       "120 contribution spots help families support the week.",
       "1 school community comes together to say thank you."
-    ]
+    ],
+    displayOrder: 2
   },
   {
     id: "fifth-grade-gift",
     slug: "fifth-grade-gift",
     title: "Camp Quail",
     type: "Class Contribution",
-    shortDescription:
-      "Camp Quail costs $70 early bird or $80 regular per student and supports the Learning Fund.",
-    fullDescription:
-      "Camp Quail gives families a night off while students enjoy 3.5 hours of games, team-building activities, arts and crafts, pizza dinner, drinks, chips, snacks, and a treat. Registration is $70 early bird or $80 regular per student.",
-    supports:
-      "All proceeds benefit the Quail Run Learning Fund, which directly supports the school.",
+    shortDescription: "Camp Quail costs $70 early bird or $80 regular per student and supports the Learning Fund.",
+    fullDescription: "Camp Quail gives families a night off while students enjoy 3.5 hours of games, team-building activities, arts and crafts, pizza dinner, drinks, chips, snacks, and a treat. Registration is $70 early bird or $80 regular per student.",
+    supports: "All proceeds benefit the Quail Run Learning Fund, which directly supports the school.",
     goalAmount: 80,
     amountRaised: 0,
     startDate: "2026-05-01",
     deadline: "2026-05-01",
     heroImage: "/camp-quail-flyer.jpg",
-    heroImageFit: "contain",
+    heroImageFit: "cover",
     heroImagePosition: "50% 50%",
-    externalDonationUrl:
-      "https://m.signupgenius.com/#!/showSignUp/60B0C4EAEA922A5F94-63567652-teacher?useFullSite=false",
+    externalDonationUrl: "https://m.signupgenius.com/#!/showSignUp/60B0C4EAEA922A5F94-63567652-teacher?useFullSite=false",
     externalActionLabel: "Sign up",
     status: "active",
     pastImpact: [
       "3.5 hours of student activities and dinner.",
       "70 dollar early bird registration supports the Learning Fund.",
       "1 evening for families to connect and support school enrichment."
-    ]
+    ],
+    displayOrder: 4
+  },
+  {
+    id: "event-1778278003479",
+    slug: "new-event-1778278003479",
+    title: "Multi Cultural Night",
+    type: "School event",
+    shortDescription: "Represent and celebrate all the cultures that make up our school community. This event is about inclusion, connection, and community building",
+    fullDescription: "You do not need to prepare a formal presentation — casual conversations and hands-on experiences are often the most meaningful. Even a small display with a few personal touches can make a big impact. By sharing our traditions and stories, we help our students see that our diversity is something to celebrate and that it strengthens our entire school community.",
+    supports: "Our goal is to represent and celebrate all the cultures that make up our school community. This event is about inclusion, connection, and community building — and we would love for every family to feel welcome to participate.",
+    goalAmount: 0,
+    amountRaised: 0,
+    startDate: "2026-05-08",
+    deadline: "2026-05-09",
+    heroImage: "/new-event-1778278003479.jpg",
+    heroImageFit: "cover",
+    heroImagePosition: "50% 50%",
+    externalDonationUrl: "",
+    externalActionLabel: "Just show up!",
+    status: "active",
+    category: "event",
+    pastImpact: [
+      "Add a past impact or participation note before publishing."
+    ],
+    displayOrder: 1
+  },
+  {
+    id: "campaign-1778255370264",
+    slug: "new-campaign-1778255370264",
+    title: "New PTA Campaign",
+    type: "Direct Donation",
+    shortDescription: "Briefly describe why families may want to support this effort.",
+    fullDescription: "Add the longer parent-facing explanation for this campaign.",
+    supports: "Describe the supplies, programs, or student experiences this funding supports.",
+    goalAmount: 5000,
+    amountRaised: 0,
+    startDate: "2026-05-06",
+    deadline: "2026-06-06",
+    heroImage: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=1600&q=80",
+    heroImageFit: "contain",
+    heroImagePosition: "50% 50%",
+    externalDonationUrl: "https://example.edu/payments/new-campaign",
+    externalActionLabel: "Donate now",
+    status: "draft",
+    category: "campaign",
+    pastImpact: [
+      "Add a past impact example before publishing."
+    ],
+    displayOrder: 7
+  },
+  {
+    id: "campaign-1778169602458",
+    slug: "new-campaign-1778169602458",
+    title: "Quail Run Color Run",
+    type: "Direct Donation",
+    shortDescription: "💵 Donate and ✉️ Share. We are encouraging every family to share their donation page with 10 people.",
+    fullDescription: " 💵 Donate and ✉️ Share. We are encouraging every family to share their donation page with 10 people. 🎁 Each class will earn fun rewards based on how much they raise as a class during the fundraiser. \n\n\n",
+    supports: "Our school goal is to raise $35000 for funding our librarian, instructional assistants, school counselor, digital subscriptions, and other programs on campus! We can’t do this without everyone’s help! ",
+    goalAmount: 35000,
+    amountRaised: 6500,
+    startDate: "2026-05-13",
+    deadline: "2026-05-13",
+    heroImage: "/new-campaign-1778169602458.jpg",
+    heroImageFit: "cover",
+    heroImagePosition: "50% 16%",
+    externalDonationUrl: "https://mybooster.com/v3",
+    externalActionLabel: "Sign up on Booster",
+    status: "active",
+    pastImpact: [
+      "Add a past impact example before publishing."
+    ],
+    category: "campaign",
+    displayOrder: 1,
+    managerUserId: "pta-user-1778212336697"
+  },
+  {
+    id: "event-1778127214342",
+    slug: "new-event-1778127214342",
+    title: "Bakers and Makers Fair",
+    type: "School event",
+    shortDescription: "Briefly describe how families can participate in this event.",
+    fullDescription: "Add the longer parent-facing explanation for this event.",
+    supports: "Describe the volunteer need, signup purpose, or school community benefit.",
+    goalAmount: 0,
+    amountRaised: 0,
+    startDate: "2026-03-01",
+    deadline: "2026-03-01",
+    heroImage: "/new-event-1778127214342.jpg",
+    heroImageFit: "cover",
+    heroImagePosition: "50% 50%",
+    externalDonationUrl: "https://m.signupgenius.com/#!/showSignUp/60B0C4EAEA922A5F94-63567652-teacher?useFullSite=false",
+    externalActionLabel: "Sign up",
+    status: "ended",
+    pastImpact: [
+      "Add a past impact or participation note before publishing."
+    ],
+    displayOrder: 5
+  },
+  {
+    id: "event-1778127149043",
+    slug: "new-event-1778127149043",
+    title: "Reading Is Groovy Book Fair",
+    type: "School event",
+    shortDescription: "Briefly describe how families can participate in this event.",
+    fullDescription: "Add the longer parent-facing explanation for this event.",
+    supports: "Describe the volunteer need, signup purpose, or school community benefit.",
+    goalAmount: 0,
+    amountRaised: 0,
+    startDate: "2026-03-18",
+    deadline: "2026-03-18",
+    heroImage: "/new-event-1778127149043.jpg",
+    heroImageFit: "cover",
+    heroImagePosition: "50% 50%",
+    externalDonationUrl: "https://m.signupgenius.com/#!/showSignUp/60B0C4EAEA922A5F94-63567652-teacher?useFullSite=false",
+    externalActionLabel: "Sign up",
+    status: "ended",
+    pastImpact: [
+      "Add a past impact or participation note before publishing."
+    ],
+    displayOrder: 4
+  },
+  {
+    id: "event-1778127071378",
+    slug: "new-event-1778127071378",
+    title: "Quail Run Family Education Night",
+    type: "School event",
+    shortDescription: "Briefly describe how families can participate in this event.",
+    fullDescription: "Add the longer parent-facing explanation for this event.",
+    supports: "Describe the volunteer need, signup purpose, or school community benefit.",
+    goalAmount: 0,
+    amountRaised: 0,
+    startDate: "2026-03-28",
+    deadline: "2026-03-28",
+    heroImage: "/new-event-1778127071378.jpg",
+    heroImageFit: "cover",
+    heroImagePosition: "50% 50%",
+    externalDonationUrl: "https://m.signupgenius.com/#!/showSignUp/60B0C4EAEA922A5F94-63567652-teacher?useFullSite=false",
+    externalActionLabel: "Sign up",
+    status: "ended",
+    pastImpact: [
+      "Add a past impact or participation note before publishing."
+    ],
+    displayOrder: 3
+  },
+  {
+    id: "campaign-1778119911271",
+    slug: "new-campaign-1778119911271",
+    title: "Dine Out at Danville Harvest",
+    type: "Restaurant Fundraiser",
+    shortDescription: "First Dine Out in March to support the Learning Fund!",
+    fullDescription: "Add the longer parent-facing explanation for this campaign.",
+    supports: "Describe the supplies, programs, or student experiences this funding supports.",
+    goalAmount: 5000,
+    amountRaised: 0,
+    startDate: "2026-04-15",
+    deadline: "2026-04-30",
+    heroImage: "/new-campaign-1778119911271.jpg",
+    heroImageFit: "cover",
+    heroImagePosition: "50% 50%",
+    externalDonationUrl: "https://www.danvilleharvest.com/menu",
+    status: "active",
+    pastImpact: [
+      "Add a past impact example before publishing."
+    ],
+    externalActionLabel: "Order online",
+    restaurant: {
+      restaurantName: "Danville Harvest",
+      location: "500 Hartz Ave, Danville, CA 94526",
+      instructions: "Mention Quail Run Elementary ",
+      donationPercentage: 15,
+      promoCode: "",
+      participationCount: 0,
+      expectedDonation: 0,
+      actualReceivedAmount: 0,
+      payoutStatus: "pending",
+      parentSelfReportNote: "Parent self-reports are unverified backup information until payout is confirmed."
+    },
+    displayOrder: 5
   }
 ];
