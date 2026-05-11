@@ -183,6 +183,7 @@ export function AdminDashboard({ initialCampaigns }: { initialCampaigns: Campaig
   const selectedReceiptSummary = selectedCampaign
     ? receiptSummaryByCampaignId[selectedCampaign.id] ?? emptyReceiptSummary
     : emptyReceiptSummary;
+  const isCampaignEditorOpen = Boolean(selectedCampaign && adminView !== "about" && adminView !== "partners");
 
   useEffect(() => {
     setPtaUsers(loadPtaUsers());
@@ -355,13 +356,21 @@ export function AdminDashboard({ initialCampaigns }: { initialCampaigns: Campaig
     setOpenActionsId(null);
 
     window.setTimeout(() => {
-      const selectedCard = document.getElementById(`admin-card-${campaign.id}`);
-      if (selectedCard) {
-        const stickyNavOffset = 128;
-        const nextTop = selectedCard.getBoundingClientRect().top + window.scrollY - stickyNavOffset;
-        window.scrollTo({ top: Math.max(0, nextTop), behavior: "smooth" });
+      const isWideLayout = window.matchMedia("(min-width: 1280px)").matches;
+      const editPanel = document.getElementById("admin-edit-panel");
+
+      if (isWideLayout) {
+        const selectedCard = document.getElementById(`admin-card-${campaign.id}`);
+        if (selectedCard) {
+          const stickyNavOffset = 128;
+          const nextTop = selectedCard.getBoundingClientRect().top + window.scrollY - stickyNavOffset;
+          window.scrollTo({ top: Math.max(0, nextTop), behavior: "smooth" });
+        }
+      } else if (editPanel) {
+        editPanel.scrollIntoView({ behavior: "smooth", block: "start" });
       }
-      document.getElementById("admin-edit-panel")?.scrollTo({ top: 0, behavior: "smooth" });
+
+      editPanel?.scrollTo({ top: 0, behavior: "smooth" });
     }, 80);
   }
 
@@ -1022,7 +1031,7 @@ export function AdminDashboard({ initialCampaigns }: { initialCampaigns: Campaig
             : "xl:grid-cols-1"
         }`}
       >
-        <div className="min-w-0 space-y-4">
+        <div className={`min-w-0 space-y-4 ${isCampaignEditorOpen ? "hidden xl:block" : ""}`}>
           <div className="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
             <div>
               <p className="text-sm font-bold uppercase tracking-[0.16em] text-meadow">
