@@ -349,29 +349,35 @@ export function AdminDashboard({ initialCampaigns }: { initialCampaigns: Campaig
     setSaveMessage(managerUserId ? "Manager assigned." : "Manager removed.");
   }
 
-  function selectCampaign(campaign: Campaign) {
-    setSelectedId(campaign.id);
-    setEditorMode("edit");
-    setForm(toForm(campaign));
-    setOpenActionsId(null);
-
+  function scrollCampaignEditorIntoView(campaignId?: string) {
     window.setTimeout(() => {
       const isWideLayout = window.matchMedia("(min-width: 1280px)").matches;
       const editPanel = document.getElementById("admin-edit-panel");
+      const adminHeader = document.getElementById("admin-sticky-header");
 
       if (isWideLayout) {
-        const selectedCard = document.getElementById(`admin-card-${campaign.id}`);
+        const selectedCard = campaignId ? document.getElementById(`admin-card-${campaignId}`) : null;
         if (selectedCard) {
           const stickyNavOffset = 128;
           const nextTop = selectedCard.getBoundingClientRect().top + window.scrollY - stickyNavOffset;
           window.scrollTo({ top: Math.max(0, nextTop), behavior: "smooth" });
         }
       } else if (editPanel) {
-        editPanel.scrollIntoView({ behavior: "smooth", block: "start" });
+        const stickyNavOffset = (adminHeader?.getBoundingClientRect().height ?? 0) + 16;
+        const nextTop = editPanel.getBoundingClientRect().top + window.scrollY - stickyNavOffset;
+        window.scrollTo({ top: Math.max(0, nextTop), behavior: "smooth" });
       }
 
       editPanel?.scrollTo({ top: 0, behavior: "smooth" });
     }, 80);
+  }
+
+  function selectCampaign(campaign: Campaign) {
+    setSelectedId(campaign.id);
+    setEditorMode("edit");
+    setForm(toForm(campaign));
+    setOpenActionsId(null);
+    scrollCampaignEditorIntoView(campaign.id);
   }
 
   function switchAdminView(nextView: AdminView) {
@@ -540,6 +546,7 @@ export function AdminDashboard({ initialCampaigns }: { initialCampaigns: Campaig
     setEditorMode("create");
     setForm(toForm(newCampaign));
     setSaveMessage("New draft created.");
+    scrollCampaignEditorIntoView(newCampaign.id);
   }
 
   function createEvent() {
@@ -576,6 +583,7 @@ export function AdminDashboard({ initialCampaigns }: { initialCampaigns: Campaig
     setEditorMode("create");
     setForm(toForm(newEvent));
     setSaveMessage("New event draft created.");
+    scrollCampaignEditorIntoView(newEvent.id);
   }
 
   function saveCampaign() {
@@ -860,7 +868,10 @@ export function AdminDashboard({ initialCampaigns }: { initialCampaigns: Campaig
 
   return (
     <main className="min-h-screen">
-      <header className="sticky top-0 z-30 border-b border-white/70 bg-white/78 shadow-[0_10px_40px_rgba(36,48,47,0.08)] backdrop-blur-xl">
+      <header
+        className="sticky top-0 z-30 border-b border-white/70 bg-white/78 shadow-[0_10px_40px_rgba(36,48,47,0.08)] backdrop-blur-xl"
+        id="admin-sticky-header"
+      >
         <div className="mx-auto grid max-w-[98rem] gap-4 px-4 py-4 sm:px-6 md:grid-cols-[1fr_auto_1fr] md:items-center lg:px-8">
           <div className="flex items-center gap-3 md:justify-self-start">
             <span className="grid h-10 w-10 place-items-center rounded-2xl bg-coral text-white shadow-[0_14px_30px_rgba(244,111,86,0.28)] rotate-[-3deg]">
@@ -1494,7 +1505,7 @@ export function AdminDashboard({ initialCampaigns }: { initialCampaigns: Campaig
 
         {selectedCampaign && adminView !== "about" ? (
         <aside
-          className="scroll-mt-28 min-w-0 h-fit rounded-3xl border border-white/70 bg-white/86 p-5 shadow-joyful backdrop-blur xl:sticky xl:top-28"
+          className="scroll-mt-[18rem] min-w-0 h-fit rounded-3xl border border-white/70 bg-white/86 p-5 shadow-joyful backdrop-blur md:scroll-mt-36 xl:sticky xl:top-28"
           id="admin-edit-panel"
         >
           <div className="mb-4 flex items-center justify-between gap-3">
@@ -1702,7 +1713,7 @@ function Field({
   value: string;
 }) {
   return (
-    <label className="text-sm font-semibold text-ink/55">
+    <label className="block min-w-0 text-sm font-semibold text-ink/55">
       <span>{label}</span>
       <input
         className="field-control"
